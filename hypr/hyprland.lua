@@ -185,3 +185,15 @@ hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 
 -- ===== Super + Print Screen (Full screen to clipboard + countdown notification) =====
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("grim - | wl-copy && ~/.config/hypr/screenshot-notify.sh"))
+
+-- ===== Cursor Theme (Catppuccin Mocha) =====
+-- Sets the cursor for Hyprland's native tools
+hl.env("HYPRCURSOR_THEME", "catppuccin-mocha")
+hl.env("HYPRCURSOR_SIZE", "24")
+
+-- Sets the cursor for XWayland and GTK applications
+hl.env("XCURSOR_THEME", "catppuccin-mocha")
+hl.env("XCURSOR_SIZE", "24")
+
+-- Force GTK Theme
+hl.env("GTK_THEME", "catppuccin-mocha-blue-standard+default")

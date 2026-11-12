@@ -231,3 +231,6 @@ hl.window_rule({
     float = true,
     center = true
 })
+
+-- ===== Gamemode Toggle =====
+hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("~/.config/hypr/gamemode.sh"))

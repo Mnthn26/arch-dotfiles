@@ -176,3 +176,12 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("code --ozone-platform-hint=auto"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("spotify-launcher"))
 -- Super + F to toggle floating (moved from V)
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
+
+-- ===== Super + Print Screen (Full screen to clipboard) =====
+
+-- ===== Super + Print Screen (Full screen to clipboard + notification) =====
+-- -t 20000 means the notification lasts 20 seconds (20000 milliseconds)
+-- -i camera-photo adds a nice camera icon to the notification
+
+-- ===== Super + Print Screen (Full screen to clipboard + countdown notification) =====
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("grim - | wl-copy && ~/.config/hypr/screenshot-notify.sh"))

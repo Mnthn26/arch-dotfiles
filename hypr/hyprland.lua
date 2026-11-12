@@ -197,3 +197,37 @@ hl.env("XCURSOR_SIZE", "24")
 
 -- Force GTK Theme
 hl.env("GTK_THEME", "catppuccin-mocha-blue-standard+default")
+
+-- ===== Window Rules for Utility Apps =====
+-- Float and center common system utilities
+
+-- Volume Control
+hl.window_rule({
+    match = { class = "^(pavucontrol)$" },
+    float = true,
+    size = "800 600",
+    center = true
+})
+
+-- Bluetooth Manager
+hl.window_rule({
+    match = { class = "^(blueman-manager)$" },
+    float = true,
+    size = "800 600",
+    center = true
+})
+
+-- Network Connection Editor
+hl.window_rule({
+    match = { class = "^(nm-connection-editor)$" },
+    float = true,
+    size = "800 600",
+    center = true
+})
+
+-- File Picker / Portal dialogs
+hl.window_rule({
+    match = { title = "^(Open File|Save File|Choose File)$" },
+    float = true,
+    center = true
+})

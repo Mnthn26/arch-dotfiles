@@ -1,0 +1,61 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+window {
+    margin: 0px;
+    background-color: rgba(30, 30, 46, 0.9); /* Catppuccin Base with 90% opacity */
+    border-radius: 16px;
+    border: 2px solid rgba(137, 180, 250, 0.5); /* Catppuccin Blue border */
+}
+
+#input {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: #cdd6f4; /* Catppuccin Text */
+    background-color: rgba(49, 50, 68, 0.8); /* Catppuccin Surface0 */
+}
+
+#input:focus {
+    border: 2px solid #89b4fa; /* Highlight border when typing */
+}
+
+#inner-box {
+    margin: 15px;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0px;
+    background-color: transparent;
+}
+
+#scroll {
+    margin-bottom: 15px;
+}
+
+#text {
+    margin: 5px;
+    color: #cdd6f4;
+}
+
+#entry {
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#entry:selected {
+    background-color: #89b4fa; /* Catppuccin Blue highlight */
+}
+
+#entry:selected #text {
+    color: #1e1e2e; /* Dark text on the bright highlight */
+    font-weight: bold;
+}
+
+#img {
+    margin-right: 10px;
+}

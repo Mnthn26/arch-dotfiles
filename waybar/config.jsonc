@@ -9,7 +9,7 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "cpu", "memory", "backlight", "pulseaudio", "network", "battery", "custom/power"],
+    "modules-right": ["mpris", "tray", "cpu", "memory", "backlight", "pulseaudio", "network", "battery", "custom/power"],
 
     "hyprland/workspaces": {
         "format": "{id}",
@@ -18,7 +18,7 @@
     },
 
     "clock": {
-        "format": "󰥔  {:%a %b %d   %H:%M}",
+        "format": "َ°¥”  {:%a %b %d   %H:%M}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
@@ -26,31 +26,47 @@
         }
     },
 
-    "tray": { "icon-size": 16, "spacing": 10 },
-
-    "cpu": {
-        "format": "󰻠 {usage}%",
-        "interval": 3,
-        "on-click": "kitty -e btop"
+    "mpris": {
+        "format": "{player_icon} {artist} - {title}",
+        "format-paused": "{status_icon} <i>{artist} - {title}</i>",
+        "format-stopped": "",
+        "player-icons": {
+            "default": "",
+            "spotify": "",
+            "chromium": "",
+            "chrome": "",
+            "firefox": ""
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        "tooltip-format": "{player} - {title}\n{artist}\n{album}",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     },
 
+    "tray": { "icon-size": 16, "spacing": 10 },
+
+    "cpu": { "format": "َ°»  {usage}%", "interval": 3, "on-click": "kitty -e btop" },
+
     "memory": {
-        "format": "󰍛 {percentage}%",
+        "format": "َ°چ› {percentage}%",
         "interval": 5,
         "tooltip-format": "{used:0.1f}G / {total:0.1f}G used"
     },
 
     "backlight": {
         "format": "{icon} {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "format-icons": ["َ°ƒ‍", "َ°ƒں", "َ°ƒ "],
         "on-scroll-up": "swayosd-client --brightness raise",
         "on-scroll-down": "swayosd-client --brightness lower"
     },
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": "󰝟 muted",
-        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "format-muted": "َ°‌ں muted",
+        "format-icons": ["َ°•؟", "َ°–€", "َ°•¾"],
         "on-click": "pavucontrol",
         "on-click-right": "swayosd-client --output-volume mute-toggle",
         "on-scroll-up": "swayosd-client --output-volume raise",
@@ -58,9 +74,9 @@
     },
 
     "network": {
-        "format-wifi": "󰤨 {signalStrength}%",
-        "format-ethernet": "󰈀 wired",
-        "format-disconnected": "󰤮 offline",
+        "format-wifi": "َ°¤¨ {signalStrength}%",
+        "format-ethernet": "َ°ˆ€ wired",
+        "format-disconnected": "َ°¤® offline",
         "tooltip-format-wifi": "{essid}\n{ipaddr}",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}",
         "on-click": "kitty -e nmtui"
@@ -69,13 +85,13 @@
     "battery": {
         "states": { "warning": 25, "critical": 10 },
         "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰚥 {capacity}%",
-        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"]
+        "format-charging": "َ°‚„ {capacity}%",
+        "format-plugged": "َ°ڑ¥ {capacity}%",
+        "format-icons": ["َ°پ؛", "َ°پ¼", "َ°پ¾", "َ°‚€", "َ°‚‚", "َ°پ¹"]
     },
 
     "custom/power": {
-        "format": "󰐥",
+        "format": "َ°گ¥",
         "tooltip": false,
         "on-click": "~/.config/waybar/power.sh"
     }

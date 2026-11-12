@@ -45,3 +45,7 @@ window#waybar {
 #mpris:hover { background: #f5c2e7; color: #11111b; }
 
 tooltip { background: #181825; border-radius: 10px; }
+
+/* Updates Module */
+#custom-updates { color: #f9e2af; padding: 0 12px; }
+#custom-updates:hover { background: #f9e2af; color: #11111b; }

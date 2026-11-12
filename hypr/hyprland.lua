@@ -236,3 +236,11 @@ hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("~/.config/hypr/gamemode.sh")
 
 -- ===== Screenshot with Swappy Annotation =====
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
+
+-- ===== Window Swallowing =====
+hl.config({
+    misc = {
+        enable_swallow = true,
+        swallow_regex = "^(kitty)$"
+    }
+})

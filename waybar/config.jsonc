@@ -9,7 +9,7 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["mpris", "tray", "pulseaudio", "custom/power"],
+    "modules-right": ["mpris", "tray", "pulseaudio", "custom/updates", "custom/power"],
 
     "hyprland/workspaces": {
         "format": "{id}",
@@ -58,6 +58,12 @@
         "on-scroll-down": "swayosd-client --output-volume lower"
     },
 
+    "custom/updates": {
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/updates.sh",
+        "interval": 3600,
+        "on-click": "kitty -e yay -Syu"
+    },
     "custom/power": {
         "format": "",
         "tooltip": false,

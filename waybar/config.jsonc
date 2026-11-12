@@ -1,0 +1,82 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "margin-top": 6,
+    "margin-left": 8,
+    "margin-right": 8,
+    "spacing": 8,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "cpu", "memory", "backlight", "pulseaudio", "network", "battery", "custom/power"],
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "persistent-workspaces": { "*": 5 },
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "format": "󰥔  {:%a %b %d   %H:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": { "today": "<span color='#89b4fa'><b><u>{}</u></b></span>" }
+        }
+    },
+
+    "tray": { "icon-size": 16, "spacing": 10 },
+
+    "cpu": {
+        "format": "󰻠 {usage}%",
+        "interval": 3,
+        "on-click": "kitty -e btop"
+    },
+
+    "memory": {
+        "format": "󰍛 {percentage}%",
+        "interval": 5,
+        "tooltip-format": "{used:0.1f}G / {total:0.1f}G used"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "swayosd-client --brightness raise",
+        "on-scroll-down": "swayosd-client --brightness lower"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 muted",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "on-click": "pavucontrol",
+        "on-click-right": "swayosd-client --output-volume mute-toggle",
+        "on-scroll-up": "swayosd-client --output-volume raise",
+        "on-scroll-down": "swayosd-client --output-volume lower"
+    },
+
+    "network": {
+        "format-wifi": "󰤨 {signalStrength}%",
+        "format-ethernet": "󰈀 wired",
+        "format-disconnected": "󰤮 offline",
+        "tooltip-format-wifi": "{essid}\n{ipaddr}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}",
+        "on-click": "kitty -e nmtui"
+    },
+
+    "battery": {
+        "states": { "warning": 25, "critical": 10 },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"]
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/power.sh"
+    }
+}

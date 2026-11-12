@@ -1,7 +1,9 @@
 #!/bin/bash
-choice=$(printf "Logout\nReboot\nShutdown" | wofi --dmenu --prompt "Power" --width 220 --height 170)
+
+choice=$(printf "  Shutdown\n  Reboot\n  Logout" | wofi --dmenu --prompt "Power" --width 200 --height 200 --cache-file /dev/null)
+
 case "$choice" in
-    Logout)   hyprctl dispatch 'hl.dsp.exit()' ;;
-    Reboot)   systemctl reboot ;;
-    Shutdown) systemctl poweroff ;;
+    *Shutdown) systemctl poweroff ;;
+    *Reboot) systemctl reboot ;;
+    *Logout) hyprctl dispatch exit ;;
 esac

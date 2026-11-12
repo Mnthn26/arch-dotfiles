@@ -244,3 +244,6 @@ hl.config({
         swallow_regex = "^(kitty)$"
     }
 })
+
+-- ===== Cheat Sheet =====
+hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd("~/.config/hypr/shortcuts.sh"))

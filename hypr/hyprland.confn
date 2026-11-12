@@ -1,0 +1,12 @@
+# --- Explicit Window Movement Keybindings ---
+# Physically move the active window with Super + Shift + Arrow keys
+bind = SUPER SHIFT, Left, movewindow, l
+bind = SUPER SHIFT, Right, movewindow, r
+bind = SUPER SHIFT, Up, movewindow, u
+bind = SUPER SHIFT, Down, movewindow, d
+# --- Explicit Window Movement Keybindings ---
+# Physically move the active window with Super + Shift + Arrow keys
+bind = SUPER SHIFT, Left, movewindow, l
+bind = SUPER SHIFT, Right, movewindow, r
+bind = SUPER SHIFT, Up, movewindow, u
+bind = SUPER SHIFT, Down, movewindow, d

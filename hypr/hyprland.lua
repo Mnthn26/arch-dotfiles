@@ -68,7 +68,6 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exit())
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd("swaylock -f -c 000000"))
 
@@ -114,9 +113,6 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/wallpaper.sh"))
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("hyprctl dispatch overview:toggle"))
 
 -- App Shortcuts
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("google-chrome-stable --ozone-platform-hint=auto"))
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("code --ozone-platform-hint=auto"))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("spotify-launcher"))
 
 -- ==========================================
 -- 6. Gestures
@@ -170,3 +166,13 @@ hl.on("hyprland.start", function()
     -- Terminal
     hl.exec_cmd(terminal)
 end)
+
+-- ===== Updated App Shortcuts & Window Controls =====
+-- Super + C for Chrome
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("google-chrome-stable --ozone-platform-hint=auto"))
+-- Super + V for VS Code
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("code --ozone-platform-hint=auto"))
+-- Super + S for Spotify
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("spotify-launcher"))
+-- Super + F to toggle floating (moved from V)
+hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))

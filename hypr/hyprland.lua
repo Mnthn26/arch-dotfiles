@@ -247,3 +247,8 @@ hl.config({
 
 -- ===== Cheat Sheet =====
 hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd("~/.config/hypr/shortcuts.sh"))
+
+-- ===== Howdy Face Scan UI =====
+hl.on("hyprland.start", function()
+    hl.exec_cmd("~/.config/hypr/howdy-ui.sh")
+end)
